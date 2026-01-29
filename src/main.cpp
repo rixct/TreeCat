@@ -10,6 +10,9 @@ int main(int argc, char* argv[]) {
         if (std::filesystem::exists(path) && std::filesystem::is_directory(path)) {
             TreeBuilder builder;
             TreeNode root = builder.buildTree(path);
+
+            TreePrinter printer;
+            printer.printTree(root);
         } else {
             std::cout << "invalid directory\n";
         }
